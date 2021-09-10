@@ -1,0 +1,36 @@
+import GuestForm from "./GuestForm";
+import { useState } from "react";
+import Guest from "../models/Guest";
+import GuestRow from "./GuestRow";
+export default function GuestList() {
+    const [guestlist, setGuestlist] = useState<Guest[]>([{name: "taz", dish: "chicken"},{name: "Reggie", dish: "beer"}]);
+
+    function onSubmit(guest: Guest) {
+        // copy then modify
+        let newList = [...guestlist];
+        newList.push(guest);
+        setGuestlist(newList);
+    }
+    function clearList(){
+        setGuestlist([]);
+    }
+
+    return (
+        <div className="GuestList">
+            <button onClick={clearList}>clear list</button>
+            <GuestForm onSubmit={onSubmit} />
+            <table>
+                <thead>
+                    <tr>
+                        <td>name</td>
+                        <td>bringing</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {guestlist.map((item, index) => <GuestRow key={index} name={item.name} dish={item.dish}/>)}
+                </tbody>
+            </table>
+
+        </div>
+    )
+}

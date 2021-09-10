@@ -1,38 +1,54 @@
-.App {
+.App h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button, input[type="submit"] {
+    cursor: pointer;
+}
+/* -----GuestList----- */
+.GuestList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.GuestList button {
+    margin: 0 auto;
+    width: 100px;
+    margin-bottom: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* -----GuestForm----- */
+.GuestForm  {
+    padding: 20px 30px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 25px auto;
+    row-gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.GuestForm input[type="submit"] {   
+    margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*-----GuestList-----*/
+table {
+    margin: 10px;
+    border: 1px solid;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead  {
+    background: #ccc;
+    font-weight: 700;
+}
+td {
+    padding: 5px;
+}
+
+tbody tr:nth-child(even) {
+    background: #eee;
 }
